@@ -14,7 +14,7 @@ public class SecurityConfig {
 	
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
-        http.csrf().ignoringRequestMatchers("/api/users/register","/api/products")  // Disable CSRF for user registration endpoint
+        http.csrf().ignoringRequestMatchers("/api/users/register","/api/products","/api/users/{id}")  // Disable CSRF for user registration endpoint
             .and()
             .authorizeRequests()
            // .requestMatchers("/api/users/register","/api/products").permitAll()  // Allow public access to registration endpoint
